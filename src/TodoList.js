@@ -67,6 +67,7 @@ class TodoList extends Component {
     console.log('componentWillMount', '在render之前执行')
   }
   render() {
+      console.log('render')
     return (
       <div>
         {/*  这是多行注释*/}
@@ -97,4 +98,4 @@ class TodoList extends Component {
   }
 }
 
-export default TodoList
+export default TodoList;
