@@ -5,7 +5,11 @@ class TodoItem extends React.Component {
     super(props)
     this.delHandle = this.delHandle.bind(this)
   }
+  shouldComponentUpdate(){
+    return false;
+  }
   render() {
+    console.log('child -----render')
     const { item, test } = this.props
     return (
       <div onClick={this.delHandle}>

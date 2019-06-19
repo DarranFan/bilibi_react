@@ -63,9 +63,7 @@ class TodoList extends Component {
       )
     })
   }
-  componentWillMount() {
-    console.log('componentWillMount', '在render之前执行')
-  }
+  
   render() {
       console.log('render')
     return (
@@ -99,3 +97,28 @@ class TodoList extends Component {
 }
 
 export default TodoList;
+
+// 01生命周期函数是指在某一时刻组件会自动调用执行
+
+// 02 render函数 当state或者props变化的时候会自动调用执行
+
+// 03 componentWillMount   在组件即将被挂载到页面上的时候立即执行  在render函数之前执行  只执行一次
+// 04 componentDidMount  在组件挂载之后执行 只执行一次
+
+// 05 组件被更新执行 自动执行
+// shouldComponentUpdate(){
+// return true //这里的设置是 是否需要对组件进行更新  如果是true就是允许组件更新 如果是false就是不允许被更新
+// }
+
+// 06 componentWillReceiveProps   当组件如果有接收prosp之后才会执行这个生命周期函数
+// 1一个组件要从父组件接收一个参数
+// 2如果这个子组件第一次存在于父组件中不会执行 componentWillReceiveProps
+// 3如果这个子组件已经存在于父组件中就会执行componentWillReceiveProps
+// componentWillReceiveProps(){
+//   console.log('componentWillReceiveProps')
+// }
+
+// 当这个组件在页面中即将消失对时候会执行
+// 07 componentWillUnmount(){
+//   console.log('componentWillUnmount')
+// }
