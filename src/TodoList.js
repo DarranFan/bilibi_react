@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
-import TodoItem from './TodoItem'
+import React, { Component } from 'react';
+import TodoItem from './TodoItem';
+import axios from 'axios';
 import './style.css' //这里一定要加后缀否则是会报错
 class TodoList extends Component {
   constructor(props) {
@@ -63,7 +64,11 @@ class TodoList extends Component {
       )
     })
   }
-  
+  componentDidMount(){
+    axios.get('/api/todolist')
+    .then(()=>{alert('succ')})
+    .catch(()=>{alert('error')})
+  }
   render() {
       console.log('render')
     return (
