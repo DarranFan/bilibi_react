@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import TodoItem from './TodoItem';
-import axios from 'axios';
+import React, { Component } from 'react'
+import TodoItem from './TodoItem'
+import axios from 'axios'
 import './style.css' //这里一定要加后缀否则是会报错
 class TodoList extends Component {
   constructor(props) {
@@ -23,7 +23,7 @@ class TodoList extends Component {
   }
   // 添加事件
   addList() {
-    // prevState 就相当于 this.state最好是用这个来代替this.state
+    // prevState 就相当于 this.state最好是用这su个来代替this.state
     this.setState(
       prevState => ({
         list: [...prevState.list, prevState.inputVal],
@@ -64,13 +64,18 @@ class TodoList extends Component {
       )
     })
   }
-  componentDidMount(){
-    axios.get('/api/todolist')
-    .then(()=>{alert('succ')})
-    .catch(()=>{alert('error')})
+  componentDidMount() {
+    axios
+      .get('/api/todolist')
+      .then(() => {
+        alert('succ')
+      })
+      .catch(() => {
+        alert('error')
+      })
   }
   render() {
-      console.log('render')
+    console.log('render')
     return (
       <div>
         {/*  这是多行注释*/}
@@ -101,7 +106,7 @@ class TodoList extends Component {
   }
 }
 
-export default TodoList;
+export default TodoList
 
 // 01生命周期函数是指在某一时刻组件会自动调用执行
 
